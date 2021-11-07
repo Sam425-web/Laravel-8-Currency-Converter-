@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CurrencyController;
+use App\Models\Currency;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+
+Route::get('/',[CurrencyController::class, 'index']);
+Route::post('/',[CurrencyController::class, 'store'])->name('currency');
